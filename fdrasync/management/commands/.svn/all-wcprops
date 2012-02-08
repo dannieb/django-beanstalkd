@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/y12sitesvndev/!svn/ver/2232/artisandeals/fdrasync/management/commands
+END
+beanstalk_worker.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/y12sitesvndev/!svn/ver/2232/artisandeals/fdrasync/management/commands/beanstalk_worker.py
+END
+manage_fdrasync_jobs.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/y12sitesvndev/!svn/ver/2164/artisandeals/fdrasync/management/commands/manage_fdrasync_jobs.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/y12sitesvndev/!svn/ver/2164/artisandeals/fdrasync/management/commands/__init__.py
+END
+spawn_beanstalk_worker.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/y12sitesvndev/!svn/ver/2164/artisandeals/fdrasync/management/commands/spawn_beanstalk_worker.py
+END
