@@ -1,8 +1,3 @@
-'''
-Created on Nov 24, 2010
-
-@author: dannieb
-'''
 from django.core.management.base import BaseCommand
 from django.db import transaction
 from fdrasync import BeanstalkClient
