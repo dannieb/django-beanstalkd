@@ -1,14 +1,17 @@
 #!/bin/bash
-#helper bash script to shutdown beanstalk workers nicely and restart a beanstalk worker
 
 PYDIR=`which python`
 DEPLOYDIR=$1
+NUMWORKERS=$2
+if [ ! $2 ]
+then
+        NUMWORKERS=1
+fi
 
-
-echo "Shutting down beanstalk workers";
+echo "Shutting down beanstalk workers: "$DEPLOYDIR;
 while :
 do
-        ps -aef | grep '^[^grep].* beanstalk_worker' | awk '{print $2}' > pids.txt
+        ps -aef | grep '^[^grep].*'$DEPLOYDIR'.*beanstalk_worker' | awk '{print $2}' > pids.txt
         fileName="pids.txt"
         exec<$fileName
         count=0
@@ -21,12 +24,15 @@ do
                 echo "All workers shut down."
                 break
         fi
-
+        
         echo $count" workers running... shutting down."
         sudo -u www-data $PYDIR $DEPLOYDIR"manage.py" beanstalk_worker --shutdown
         sleep 2
 done
-
-echo "Starting beanstalk workers.."
-sudo -u www-data $PYDIR $DEPLOYDIR"manage.py" beanstalk_worker --start  & > /dev/null
+    
+echo "Starting "$NUMWORKERS" beanstalk worker(s).."
+for i in $(eval echo {1..$NUMWORKERS})
+do
+        sudo -u www-data $PYDIR $DEPLOYDIR"manage.py" beanstalk_worker --start  & > /dev/null
+done
 rm pids.txt
