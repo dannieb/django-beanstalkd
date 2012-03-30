@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 from django.db import transaction
-from fdrasync import BeanstalkClient
-from fdrasync.models import JobRecord, JobStatus
+from django_beanstalkd import BeanstalkClient
+from django_beanstalkd.models import JobRecord, JobStatus
 from json.decoder import JSONDecoder
 from optparse import make_option
 import logging

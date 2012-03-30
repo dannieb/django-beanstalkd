@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.core.management.base import NoArgsCommand
-from fdrasync import connect_beanstalkd, BeanstalkClient
-from fdrasync.models import JobRecord, JobStatus
+from django_beanstalkd import connect_beanstalkd, BeanstalkClient
+from django_beanstalkd.models import JobRecord, JobStatus
 from json.decoder import JSONDecoder
 from json.encoder import JSONEncoder
 from optparse import make_option

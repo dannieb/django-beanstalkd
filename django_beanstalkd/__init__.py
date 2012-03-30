@@ -1,9 +1,9 @@
-from fdrasync.models import JobRecord, JobStatus
+from django_beanstalkd.models import JobRecord, JobStatus
 from json.encoder import JSONEncoder
 from uuid import uuid4
 import beanstalkc
 import logging
-import settings
+from django.conf import settings
 
 
 DEFAULT_JOB_PRIORITY = beanstalkc.DEFAULT_PRIORITY
