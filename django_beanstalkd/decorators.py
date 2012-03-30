@@ -3,9 +3,9 @@
 Anything that's been decorated with this function 
 '''
 from json.decoder import JSONDecoder
-class fdrasync_job(object):
+class async_job(object):
     """
-    Decorator marking a function inside some_app/fdrasync_job.py as a
+    Decorator marking a function inside some_app/async_job.py as a
     beanstalk job
     """
 
